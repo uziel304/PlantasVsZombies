@@ -1,0 +1,263 @@
+	body {
+			margin:0;
+			padding:0;
+			overflow: hidden;
+		}
+		canvas {
+			margin:auto;
+		}
+.container {
+	position: absolute;
+	top: 0;
+	background-image: url("../img/fondo.jpg");
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 100%;
+	background-attachment: fixed;
+	color: #fff;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+}
+
+.preloader {
+	margin:40% auto auto auto ;
+
+	width: 500px;
+	height: 80px;
+	/*background: rgba(255,255,255,0.1);*/
+	position: relative;
+	z-index: 1;
+}
+
+.preloader:before {
+	content: "";
+	position: absolute;
+	background-image:url("../img/1.png"); ;
+	width: 0;
+	height: 80px;
+	animation: preloader 10s ;
+	animation-fill-mode: forwards;
+}
+
+.preloader-roll {
+    position: absolute;
+		background-image: url("../img/SodRollCap.png");
+    top: 89%;
+    left: 35%;
+    width: 70px;
+    height: 70px;
+    margin:-60px 0 0 -60px;
+		z-index: 99;
+    /* -webkit-animation:spin 10s linear infinite;
+    -moz-animation:spin 10s linear infinite; */
+    animation:spin 6s linear ;
+		animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+		0% {
+			left: 35%;
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+		 	transform:rotate(360deg);
+			left: 66%;
+		}
+
+	 }
+
+	 @keyframes preloader {
+	 	from {
+	 		width: 0;
+	 		opacity: 1;
+	 	}
+	 	to {
+	 		width: 100%;
+	 	}
+	 }
+
+.preloader-img {
+	margin:44.5% auto auto 34.2% ;
+	background-image: url("../img/cuadro-cafe.png");
+	width: 480px;
+	height: 30px;
+	/*background: rgba(255,255,255,0.1);*/
+	position: absolute;
+}
+
+
+.preloader-img  a{
+	text-decoration: none;
+	color: #e8ba7f;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 33px;
+	margin-left:40%;
+	transform: translateX(-50%);
+	animation-name: parpadeo;
+  	animation-duration: 1s;
+  	animation-timing-function: linear;
+  	animation-iteration-count: infinite;
+
+  	-webkit-animation-name:parpadeo;
+  	-webkit-animation-duration: 1s;
+  	-webkit-animation-timing-function: linear;
+  	-webkit-animation-iteration-count: infinite;
+}
+
+
+.preloader-img .oculto {
+	display: none;
+}
+
+
+
+.preloader p {
+	margin: 0;
+	line-height: 30px;
+	font-size: 25px;
+	font-weight: bold;
+
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+
+/*Menu*/
+.menu{
+	position: absolute;
+	top: 0;
+	background-image: url("../img/interface/menu.png");
+	background-repeat: no-repeat;
+	background-position: top top;
+	background-size: 100%;
+	background-attachment: fixed;
+	color: #fff;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+}
+
+.botonJugar{
+  width: 500px;
+	height: 217px;
+	margin-left: 804px;
+	margin-top: 80px;
+  background: transparent url("../img/interface/jugar.png");
+	background-repeat: no-repeat;
+  background-position: 0px 0px;
+  float:left;
+	border:none;
+	outline: none;
+
+}
+.botonJugar:hover{
+  background-position: 0px -222px;
+	transform: scale(1.02);
+}
+
+.boton-Juegos{
+	width: 32.5%;
+	height: 208px;
+	margin-left: 804px;
+	margin-top: -20px;
+  background: transparent url("../img/interface/juegos.png");
+  background-position: 0px 0px;
+  float:left;
+	border:none;
+	outline: none;
+
+}
+.boton-Juegos:hover{
+  background-position: 0px -627px;
+	transform: scale(1.02);
+}
+
+.botonesOpciones{
+	width: 100%;
+	min-height: 160px;
+	position: absolute;
+	bottom: 0;
+}
+.botonesOpciones a{
+	margin-left: 72%;
+
+}
+.botonesOpciones a img{
+	width:7%;
+	margin-top: 1em;
+}
+
+.botonesOpciones a:nth-last-child(1){
+	margin-left: 80%;
+}
+
+.botonesOpciones a:nth-last-of-type(1) img{
+	width:7%;
+	margin-top: -3em;
+}
+
+.botonesOpciones a:nth-last-child(2){
+	margin-left: 90%;
+}
+
+.botonesOpciones a:nth-last-child(2) img{
+	width:7%;
+	margin-top: -2.5em;
+}
+
+
+.modal{
+	width: 790px;
+	position: absolute;
+	display: none;
+
+}
+.modal img{
+	float: right;
+}
+.modal a {
+	display: inline;
+    grid-row-gap: 50px;
+    color: #fff;
+    text-decoration: none;
+    /* margin-left: 0%; */
+    left: 60%;
+    top: 200px;
+    padding: 20px;
+    position: relative;
+}
+
+.modal > span{
+	margin-top: 52%;
+    margin-left: 55%;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+/*Aqui temina menu*/
+
+
+
+@-moz-keyframes parpadeo{
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+   100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {
+  0% { opacity: 1.0; }
+   50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}

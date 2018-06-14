@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plantas VS Zombies</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/icono.png" type="image/gif" sizes="16x16">
+  </head>
+  <body>
+    <div class="menu">
+    	<div class="contMenu">
+        <button id="hover" type="button" class="botonJugar" onclick="document.getElementById('modal').style.display='block'"></button>
+        <button  type="button" name="button" class="boton-Juegos"></button>
+
+        <div class="botonesOpciones">
+          <a href=""><img src="img/interface/opciones.png" alt=""></a>
+          <a href=""><img src="img/interface/ayuda.png" alt=""></a>
+          <a href="#">
+            <img src="img/interface/salir.png" alt="">
+          </a>
+        </div>
+
+        <div class="modal" id="modal">
+
+          <form>
+           <a href="#" onclick="elegirNivel(1)"> 
+            <span>Nivel 1</span></a>
+            <a href="#" onclick="elegirNivel(2)"> 
+              <span>Nivel 2</span></a>
+              <a href="#" onclick="elegirNivel(3)"> 
+                <span>Nivel 3</span></a>
+
+                <input type="hidden" id="nivelJugar" value="1">
+                <input type="hidden" id="jugar" value="0">
+              </form>
+              <img src="img/interface/modal.png" alt="">
+              <span onclick="document.getElementById('modal').style.display='none'">
+                <img src="img/interface/cerrar.png">
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <audio id="sonido" >
+          <source src="sounds/CLICK.wav"></source> 
+          This browser does not support the HTML5 audio tag.
+        </audio>  
+
+        <script src="libraries/jquery.js"></script>
+        <script src="libraries/p5.min.js"></script>
+        <script src="libraries/p5.sound.js"></script>
+        <script src="js/sketch.js"></script>
+        <script type="text/javascript">
+
+          //$(".menu").hide()
+          function elegirNivel(nivel)
+          {
+            document.getElementById("nivelJugar").value=nivel;
+            $(".menu").hide()
+            document.getElementById("jugar").value=1;
+          }
+        </script>
+        <script>
+          var shutdownEngaged = $("#sonido")[0];
+          $("#hover")
+          .mouseenter(function() {
+            shutdownEngaged.play();
+          });
+        </script>
+  </body>
+</html>
